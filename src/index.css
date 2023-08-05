@@ -1,11 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.font-link {
-    font-family: 'Roboto Condensed', cursive;
-  }
- 
-.parentDiv{
-    overflow: hidden;
-}

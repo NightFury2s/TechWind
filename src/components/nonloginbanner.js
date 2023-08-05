@@ -1,5 +1,6 @@
 import React from "react";
 import banner_5 from "../assets/images/banner_4.jpg";
+import { Link } from "react-router-dom";
 
 const Nonloginbanner = () => {
   return (
@@ -18,12 +19,17 @@ const Nonloginbanner = () => {
           extensive product range. Get started and sign up now.
         </p>
         <div className="">
-          <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xl px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-            <a href="/login">SIGN UP</a>
-          </button>
-          <button type="button" class="text-gray-900 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xl px-5 py-2.5 mr-2 mb-2  dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            LOG IN
-          </button>
+          <Link to="/signup">
+            <button type="button" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xl px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+              SIGN UP
+            </button>
+            
+          </Link>
+          <Link to="/login">
+            <button type="button" className="text-gray-900 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xl px-5 py-2.5 mr-2 mb-2  dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+              LOG IN
+            </button>
+          </Link>
         </div>
       </div>
     </div>
