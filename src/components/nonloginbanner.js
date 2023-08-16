@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Nonloginbanner = () => {
   return (
-    <div className="w-full h-[90vh] top-[90px]">
+    <div className="w-full h-[70vh] top-[90px]">
       <img
         className="object-cover h-[70vh] w-full absolute -z-10"
         src={banner_5}
