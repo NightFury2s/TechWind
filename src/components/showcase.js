@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -38,14 +38,25 @@ const Showcase = () => {
     },
   ];
 
+  const sliderRef = useRef(null);
+
+  const goToPrev = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const goToNext = () => {
+    sliderRef.current.slickNext();
+  };
+
   const settings = {
     centerMode: true,
     infinite: true,
     centerPadding: "0",
     slidesToShow: 5,
     slidesToScroll: 1,
-    prevArrow: <button className="slick-arrow slick-prev"><AiOutlineLeft size={40} /></button>,
-    nextArrow: <button className="slick-arrow slick-next"><AiOutlineRight size={40} /></button>,
+    ref: sliderRef,
+    swipe: false,      // Disable swipe
+    draggable: false,  // Disable dragging
     responsive: [
       {
         breakpoint: 1024,
@@ -72,7 +83,7 @@ const Showcase = () => {
         </h2>
       </div>
 
-      <div className="parentDiv p-2 m-4">
+      <div className="parentDiv p-2 m-4 relative">
         <Slider {...settings}>
           {products.map((product) => (
             <div key={product.id} className="text-center">
@@ -89,6 +100,18 @@ const Showcase = () => {
             </div>
           ))}
         </Slider>
+        <div
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-red-800 p-4 cursor-pointer"
+          onClick={goToPrev}
+        >
+          <AiOutlineLeft size={40} />
+        </div>
+        <div
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-red-800 p-4 cursor-pointer"
+          onClick={goToNext}
+        >
+          <AiOutlineRight size={40} />
+        </div>
       </div>
     </div>
   );

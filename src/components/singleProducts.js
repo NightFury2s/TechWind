@@ -7,6 +7,7 @@ const API = "https://api.pujakaitem.com/api/products"
 
 const SingleProduct = () => {
   const {getSingleProduct, isSingleLoading, singleProduct} = useProductContext();
+  console.log("🚀 ~ file: singleProducts.js:10 ~ SingleProduct ~ isSingleLoading:", isSingleLoading)
   
   const { id } = useParams();
   
@@ -21,6 +22,14 @@ const SingleProduct = () => {
     stars,
     reviews,
   } = singleProduct;
+    console.log("🚀 ~ file: singleProducts.js:25 ~ SingleProduct ~ reviews:", reviews)
+    console.log("🚀 ~ file: singleProducts.js:24 ~ SingleProduct ~ stars:", stars)
+    console.log("🚀 ~ file: singleProducts.js:24 ~ SingleProduct ~ stock:", stock)
+    console.log("🚀 ~ file: singleProducts.js:24 ~ SingleProduct ~ category:", category)
+    console.log("🚀 ~ file: singleProducts.js:24 ~ SingleProduct ~ description:", description)
+    console.log("🚀 ~ file: singleProducts.js:24 ~ SingleProduct ~ price:", price)
+    console.log("🚀 ~ file: singleProducts.js:24 ~ SingleProduct ~ company:", company)
+    console.log("🚀 ~ file: singleProducts.js:24 ~ SingleProduct ~ alias:", alias)
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
